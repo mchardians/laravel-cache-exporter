@@ -1,0 +1,43 @@
+{
+    "name": "mchardians/laravel-cache-exporter",
+    "description": "Prometheus exporter for Laravel cache metrics (hit/miss, latency) backed by APCu.",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0 || ^12.0",
+        "illuminate/cache": "^11.0 || ^12.0",
+        "illuminate/console": "^11.0 || ^12.0",
+        "illuminate/http": "^11.0 || ^12.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.7",
+        "orchestra/testbench": "^10.0",
+        "orchestra/pest-plugin-testbench": "^4.0"
+    },
+    "license": "MIT",
+    "scripts": {
+        "test": "./vendor/bin/pest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mchardians\\LaravelCacheExporter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Mchardians\\LaravelCacheExporter\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mochammad Ardiansyah",
+            "email": "mchardians@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
