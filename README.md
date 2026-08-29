@@ -38,7 +38,6 @@ php artisan vendor:publish --tag=config
 
 | Setting | Default Value | Purpose |
 |---------|---------------|---------|
-
 | `metrics_path` | `/metrics/cache` | The endpoint path for Prometheus scraping. It avoids the root /metrics path to prevent conflicts with other packages. |
 | `excluded_key_patterns` | `['laravel_session']` | A list of substrings used to filter out specific cache keys. Any key containing these strings is ignored, which is helpful for excluding session traffic if SESSION_DRIVER and CACHE_STORE use the same backend. |
 | `only_store` | `[]` | An explicit allowlist of cache stores to monitor. An empty array records all stores. This is beneficial during benchmarks to isolate specific engines and ignore internal package caches. |
@@ -98,7 +97,6 @@ Every metric includes an engine label (file, redis, memcached, or unknown if unr
 
 | Metric | Type | Description |
 |--------|------|-------------|
-
 | `laravel_cache_requests_total` | Counter | Tracks read attempts (the sum of hits and misses). Write operations are excluded from this metric. |
 | `laravel_cache_hits_total` | Counter | Tracks successful read attempts where data was found. |
 | `laravel_cache_misses_total` | Counter | Tracks failed read attempts where data was absent. |
