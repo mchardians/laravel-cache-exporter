@@ -14,7 +14,7 @@ class ResetMetricsCommand extends Command
     public function handle(): int
     {
         if(!function_exists('apcu_enabled') || !apcu_enabled()) {
-            $this->error('APCU is not enabled. Nothing to reset.');
+            $this->error('APCu is not enabled. Nothing to reset.');
             
             return self::FAILURE;
         }

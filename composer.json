@@ -7,7 +7,8 @@
         "illuminate/support": "^11.0 || ^12.0",
         "illuminate/cache": "^11.0 || ^12.0",
         "illuminate/console": "^11.0 || ^12.0",
-        "illuminate/http": "^11.0 || ^12.0"
+        "illuminate/http": "^11.0 || ^12.0",
+        "ext-apcu": "*"
     },
     "require-dev": {
         "pestphp/pest": "^4.7",
@@ -26,7 +27,10 @@
     "autoload-dev": {
         "psr-4": {
           "Mchardians\\LaravelCacheExporter\\Tests\\": "tests/"
-        }
+        },
+        "files": [
+          "tests/Support/override-apcu-functions.php"
+        ]
     },
     "authors": [
         {

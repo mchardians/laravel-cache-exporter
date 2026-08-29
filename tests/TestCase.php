@@ -38,4 +38,19 @@ class TestCase extends Orchestra
 
         parent::setUp();
     }
+
+    #[Override]
+    protected function tearDown(): void
+    {
+        Support\ApcuAvailabilityStub::$forceDisabled = false;
+        
+        parent::tearDown();
+    }
+
+    protected function bootAppWithApcuDisabled(): void
+    {
+        Support\ApcuAvailabilityStub::$forceDisabled = true;
+
+        $this->refreshApplication();
+    }
 }
